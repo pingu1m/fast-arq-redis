@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile.worker
+    container_name: fastapi-gino-arq-uvicorn-worker
+    image: fastapi-gino-arq-uvicorn-worker
+    env_file: .env
+    environment:
+      - COMPOSE_CONVERT_WINDOWS_PATHS=1
